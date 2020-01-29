@@ -99,7 +99,7 @@ export default class MoviesList extends Component {
       <div>
         <h3>
           Logged Movies
-          <div classname="float-sm-right">
+          <div className="float-sm-right">
             <form onSubmit={this.onSubmit}>
               <input
                 type="text"
