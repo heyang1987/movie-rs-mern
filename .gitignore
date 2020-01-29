@@ -2,7 +2,7 @@
 
 # dependencies
 /node_modules
-backend/node_modules
+client/node_modules
 /.pnp
 .pnp.js
 
@@ -10,7 +10,7 @@ backend/node_modules
 /coverage
 
 # production
-/build
+client/build
 
 # misc
 .DS_Store
