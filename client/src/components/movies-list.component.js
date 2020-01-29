@@ -35,7 +35,7 @@ export default class MoviesList extends Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:5000/movies/")
+      .get("http://localhost/movies/")
       .then(response => {
         this.setState({ movies: response.data });
       })
