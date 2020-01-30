@@ -9,12 +9,12 @@ import MoviesList from "./components/movies-list.component";
 function App() {
   return (
     <Router>
-      {/* <div className="container"> */}
-      <Navbar />
-      <br />
-      <Route path="/" component={MoviesList} />
-      {/* <Route path="/search" component={SearchMovie} /> */}
-      {/* </div> */}
+      <div className="container-fluid">
+        <Navbar />
+        <br />
+        <Route path="/" component={MoviesList} />
+        {/* <Route path="/search" component={SearchMovie} /> */}
+      </div>
     </Router>
   );
 }

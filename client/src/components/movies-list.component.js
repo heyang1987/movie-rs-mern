@@ -14,9 +14,11 @@ const Movie = props => (
     <td>{props.movie.aveRating}</td>
     <td>{props.movie.director}</td>
     <td>{props.movie.writer}</td>
-    <td>{props.movie.description}</td>
+    {/* <td>{props.movie.description}</td> */}
     <td>{props.movie.cast}</td>
-    <td>{props.movie.poster}</td>
+    <td>
+      <img src={props.movie.poster} alt={props.movie.title} width="100" />
+    </td>
   </tr>
 );
 
@@ -35,7 +37,7 @@ export default class MoviesList extends Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost/movies/")
+      .get("https://movie-mern.herokuapp.com/movies/")
       .then(response => {
         this.setState({ movies: response.data });
       })
@@ -85,7 +87,7 @@ export default class MoviesList extends Component {
     console.log(this.state.mId);
 
     axios
-      .get("http://localhost:5000/movies/" + this.state.mId)
+      .get("https://movie-mern.herokuapp.com/movies/" + this.state.mId)
       .then(response => {
         this.setState({ movies: response.data });
       })
@@ -98,24 +100,26 @@ export default class MoviesList extends Component {
     return (
       <div>
         <h3>
-          Logged Movies
-          <div className="float-sm-right">
-            <form onSubmit={this.onSubmit}>
-              <input
-                type="text"
-                // required
-                className="form"
-                value={this.state.mId}
-                onChange={this.onChangeMovieId}
-              />
+          Movie DataBase
+          <input
+            type="text"
+            className="float-sm-right"
+            rows="1"
+            value={this.state.mId}
+            onChange={this.onChangeMovieId}
+          />
+        </h3>
+        <div className="float-sm-right">
+          <form onSubmit={this.onSubmit}>
+            <div className="form-group">
               <input
                 type="submit"
                 value="Search by ID"
                 className="btn btn-primary"
               />
-            </form>
-          </div>
-        </h3>
+            </div>
+          </form>
+        </div>
         <table className="table">
           <thead className="thead-light">
             <tr>
@@ -129,7 +133,7 @@ export default class MoviesList extends Component {
               <th>aveRating</th>
               <th>director</th>
               <th>writer</th>
-              <th>description</th>
+              {/* <th>description</th> */}
               <th>cast</th>
               <th>poster</th>
             </tr>
