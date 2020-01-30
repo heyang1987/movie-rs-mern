@@ -12,7 +12,7 @@ function App() {
       <div className="container-fluid">
         <Navbar />
         <br />
-        <Route path="/" component={MoviesList} />
+        <Route exact path="/" component={MoviesList} />
         {/* <Route path="/search" component={SearchMovie} /> */}
       </div>
     </Router>
