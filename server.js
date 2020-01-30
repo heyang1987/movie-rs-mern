@@ -18,9 +18,9 @@ connection.once("open", () => {
   console.log("MongoDB database connection established successfully");
 });
 
-const moviesRouter = require("./routes/movies");
+const moviesRouter = require("./routes/api/movies");
 
-app.use("/movies", moviesRouter);
+app.use("/api/movies", moviesRouter);
 
 // Serve static assets if in production
 if (process.env.NODE_ENV === "production") {

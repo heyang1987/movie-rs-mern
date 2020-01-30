@@ -38,9 +38,9 @@ export default class MoviesList extends Component {
   componentDidMount() {
     var API = "";
     if (process.env.NODE_ENV === "production") {
-      API = "https://movie-mern.herokuapp.com/movies/";
+      API = "https://movie-mern.herokuapp.com/api/movies/";
     } else {
-      API = "http://localhost:5000/movies/";
+      API = "http://localhost:5000/api/movies/";
     }
     axios
       .get(API)
@@ -93,9 +93,9 @@ export default class MoviesList extends Component {
     console.log(this.state.mId);
     var API = "";
     if (process.env.NODE_ENV === "production") {
-      API = "https://movie-mern.herokuapp.com/movies/";
+      API = "https://movie-mern.herokuapp.com/api/movies/";
     } else {
-      API = "http://localhost:5000/movies/";
+      API = "http://localhost:5000/api/movies/";
     }
     axios
       .get(API + this.state.mId)
